@@ -1,2 +1,46 @@
+//Addditonal plugins
 @import '../plugins/sanitize.scss';
 @import '../plugins/unsemantic-grid-responsive-tablet-no-ie7.scss';
+
+
+
+//Main css
+
+$globalFontFamily: Raleway, sans-serif;
+
+$headerLinkColor: black;
+$headerLinkColorHover: red;
+
+
+//Global styling
+
+* {
+    font-family: $globalFontFamily;
+}
+
+body {
+    font-size: 16px;
+}
+
+//Header
+
+.header {
+    text-align: center;
+}
+
+.header li {
+    display: inline-block;
+}
+
+.header a {
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 0 1.5em;
+    color: $headerLinkColor;
+    transition: color 0.3s;
+}
+
+.header a:hover {
+    color: $headerLinkColorHover;
+}
