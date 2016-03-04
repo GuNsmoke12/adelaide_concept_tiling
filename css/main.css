@@ -1363,21 +1363,141 @@ textarea,
 body {
   font-size: 16px; }
 
+p {
+  color: #8d8d8d;
+  font-size: 0.81em; }
+
+h2 {
+  font-size: 2.5em;
+  line-height: 1.2em;
+  letter-spacing: 2px;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #393939;
+  margin: 0.5em 0 1em; }
+
+h3 {
+  font-size: 1.125em;
+  line-height: 1.44em;
+  letter-spacing: 1px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #393939;
+  margin: 2em 0 1em; }
+
+h4 {
+  font-size: 0.81em;
+  line-height: 1.53em;
+  letter-spacing: 1px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #8b8b8b; }
+
 .header {
   text-align: center; }
+  .header li {
+    display: inline-block; }
+  .header a {
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 0 1.5em;
+    color: black;
+    transition: color 0.3s; }
+    .header a:hover {
+      color: red; }
 
-.header li {
-  display: inline-block; }
+.headliner_wrapper {
+  padding: 10em 0; }
 
-.header a {
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  padding: 0 1.5em;
-  color: black;
-  transition: color 0.3s; }
+.headliner {
+  height: 400px; }
+  .headliner .owl-carousel {
+    height: 100%; }
+  .headliner .owl-wrapper-outer {
+    height: 100%; }
+  .headliner .owl-wrapper {
+    height: 100%; }
+  .headliner .owl-item {
+    height: 100%; }
+  .headliner .carousel_image {
+    height: 100%;
+    width: 100%;
+    background-color: red;
+    background-size: cover;
+    background-position: center center; }
+    .headliner .carousel_image-1 {
+      background-image: url(../../images/carousel_images/bathroom.jpg); }
+    .headliner .carousel_image-2 {
+      background-image: url(../../images/carousel_images/exterior_feature_wall.jpg); }
+    .headliner .carousel_image-3 {
+      background-image: url(../../images/carousel_images/front_entrance.jpg); }
 
-.header a:hover {
-  color: red; }
+.blerb_wrapper {
+  padding: 10em 0; }
+
+.blerb {
+  margin: 0 5%; }
+
+.services_wrapper {
+  overflow: auto;
+  background-color: #f5f5f5;
+  padding: 10em 0; }
+
+.services {
+  margin: 0 5%; }
+
+.service_items {
+  text-align: center; }
+  .service_items .service {
+    margin-bottom: 4em; }
+  .service_items i {
+    color: #f47e2a;
+    font-size: 3em; }
+
+.showcase_wrapper {
+  overflow: auto;
+  padding: 10em 0; }
+  .showcase_wrapper .showcase_text {
+    margin: 0 5%; }
+
+.showcase-item {
+  height: 280px; }
+.showcase-item-1 {
+  background-image: url(../../images/carousel_images/bathroom.jpg); }
+.showcase-item-2 {
+  background-image: url(../../images/carousel_images/exterior_feature_wall.jpg); }
+.showcase-item-3 {
+  background-image: url(../../images/carousel_images/front_entrance.jpg); }
+.showcase-item-4 {
+  background-image: url(../../images/carousel_images/home_exterior_full.jpg); }
+.showcase-item-5 {
+  background-image: url(../../images/carousel_images/pool.jpg); }
+.showcase-item-6 {
+  background-image: url(../../images/carousel_images/water_feature.jpg); }
+.showcase-item-7 {
+  background-image: url(../../images/carousel_images/home_exterior_left.jpg); }
+.showcase-item-8 {
+  background-image: url(../../images/carousel_images/water_feature_wall.jpg); }
+.showcase a {
+  width: 100%;
+  height: 100%;
+  display: block;
+  background-position: center center;
+  background-size: cover; }
+.showcase img {
+  width: 100%; }
+
+.social_wrapper {
+  padding: 10em 0; }
+
+.social {
+  margin: 0 5%; }
+
+.contact_wrapper {
+  padding: 10em 0; }
+
+.contact {
+  margin: 0 5%; }
 
 /*# sourceMappingURL=main.css.map */

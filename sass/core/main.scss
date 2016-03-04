@@ -8,8 +8,18 @@
 
 $globalFontFamily: Raleway, sans-serif;
 
+$generalTextColor: #8d8d8d;
 $headerLinkColor: black;
 $headerLinkColorHover: red;
+$h1Color: #393939;
+$h2Color: #393939;
+$h3Color: #393939;
+$h4Color: #8b8b8b;
+$logoOrange: rgb(244,126,42);
+
+$sectionBgColor: #f5f5f5;
+$sectionPadding: 10em 0;
+$sectionMargin: 0 5%;
 
 
 //Global styling
@@ -22,25 +32,225 @@ body {
     font-size: 16px;
 }
 
+p {
+    color: $generalTextColor;
+    font-size: 0.81em;
+}
+
+h2 {
+    font-size: 2.5em;
+    line-height: 1.2em;
+    letter-spacing: 2px;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: $h2Color;
+    margin: 0.5em 0 1em;
+}
+
+h3 {
+    font-size: 1.125em;
+    line-height: 1.44em;
+    letter-spacing: 1px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: $h3Color;
+    margin: 2em 0 1em;
+}
+
+h4 {
+    font-size: 0.81em;
+    line-height: 1.53em;
+    letter-spacing: 1px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: $h4Color;
+}
+
 //Header
 
 .header {
     text-align: center;
+    
+    li {
+        display: inline-block;
+    }
+    
+    a {
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        padding: 0 1.5em;
+        color: $headerLinkColor;
+        transition: color 0.3s;
+        
+        &:hover {
+            color: $headerLinkColorHover;
+        }
+    }
 }
 
-.header li {
-    display: inline-block;
+//Headline
+
+.headliner_wrapper {
+    padding: $sectionPadding;
 }
 
-.header a {
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    padding: 0 1.5em;
-    color: $headerLinkColor;
-    transition: color 0.3s;
+.headliner {
+    height: 400px;
+    
+    .owl-carousel {
+        height: 100%;
+    }
+    
+    .owl-wrapper-outer {
+        height: 100%;
+    }
+    
+    .owl-wrapper {
+        height: 100%;
+    }
+    
+    .owl-item {
+        height: 100%;
+    }
+    
+    .carousel_image {
+        height: 100%;
+        width: 100%;
+        background-color: red;
+        background-size: cover;
+        background-position: center center;
+        
+        &-1 {
+            background-image: url(../../images/carousel_images/bathroom.jpg)
+        }
+        
+        &-2 {
+            background-image: url(../../images/carousel_images/exterior_feature_wall.jpg)
+        }
+        
+        &-3 {
+            background-image: url(../../images/carousel_images/front_entrance.jpg)
+        }
+    }
 }
 
-.header a:hover {
-    color: $headerLinkColorHover;
+//Blerb
+
+.blerb_wrapper {
+    padding: $sectionPadding;
+}
+
+.blerb {
+    margin: $sectionMargin;
+}
+
+//Service
+
+.services_wrapper {
+    overflow: auto;
+    background-color: $sectionBgColor;
+    padding: $sectionPadding;
+}
+
+.services {
+    margin: $sectionMargin;
+}
+
+.service_items {
+    text-align: center;
+    
+    .service {
+        margin-bottom: 4em;
+    }
+    
+    i {
+        color: $logoOrange;
+        font-size: 3em;
+    }
+}
+
+//Showcase
+
+.showcase_wrapper {
+    overflow: auto;
+    padding: $sectionPadding;
+    
+    .showcase_text {
+        margin: $sectionMargin;
+    }
+}
+
+.showcase {    
+    &-item {
+        height: 280px;
+    }
+    
+    &-item-1 {
+        background-image: url(../../images/carousel_images/bathroom.jpg)
+    }
+    
+    &-item-2 {
+        background-image: url(../../images/carousel_images/exterior_feature_wall.jpg)
+    }
+    
+    &-item-3 {
+        background-image: url(../../images/carousel_images/front_entrance.jpg)
+    }
+    
+    &-item-4 {
+        background-image: url(../../images/carousel_images/home_exterior_full.jpg)
+    }
+    
+    &-item-5 {
+        background-image: url(../../images/carousel_images/pool.jpg)
+    }
+    
+    &-item-6 {
+        background-image: url(../../images/carousel_images/water_feature.jpg)
+    }
+    
+    &-item-7 {
+        background-image: url(../../images/carousel_images/home_exterior_left.jpg)
+    }
+    
+    &-item-8 {
+        background-image: url(../../images/carousel_images/water_feature_wall.jpg)
+    }
+    
+    a {
+        width: 100%;
+        height: 100%;
+        display: block;
+        background-position: center center;
+        background-size: cover;
+    }
+    
+    img {
+        width: 100%;
+    }
+    
+    &-popup {
+        
+    }
+}
+
+//Social
+
+.social_wrapper {
+    padding: $sectionPadding;
+}
+
+.social {
+    margin: $sectionMargin;
+}
+
+//Contact
+
+.contact_wrapper {
+    padding: $sectionPadding;
+}
+
+.contact {
+    margin: $sectionMargin;
 }
