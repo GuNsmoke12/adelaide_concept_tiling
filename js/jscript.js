@@ -1,80 +1,106 @@
-$(document).ready(function() {
- 
-    $("#owl-carousel").owlCarousel({
+(function () {
+    "use strict";
+    /*globals $:false */
 
-            // Most important owl features
-        items : 5,
-        itemsCustom : false,
-        itemsDesktop : [1199,4],
-        itemsDesktopSmall : [980,3],
-        itemsTablet: [768,2],
-        itemsTabletSmall: false,
-        itemsMobile : [479,1],
-        singleItem : true,
-        itemsScaleUp : true,
+    var initShowcaseSlide = function () {
+        var duration = 300;
+        
+        $('.showcase-popup').css('display','none');
+        
+        $('.showcase-item').children().click( function (e) {
+            e.preventDefault();
+            $(this).parent().find('.showcase-popup').stop().fadeToggle(duration);
+        })
+        
+        $('.showcase-item').mouseenter( function () {
+            $(this).find('.showcase-popup').stop().fadeIn(duration);
+        }).mouseleave( function () {
+            $(this).find('.showcase-popup').stop().fadeOut(duration);
+        });
+    }
+    
+    var initOwlCarousel = function () {
+        $("#owl-carousel").owlCarousel({
 
-        //Basic Speeds
-        slideSpeed : 200,
-        paginationSpeed : 800,
-        rewindSpeed : 1000,
+                // Most important owl features
+            items : 5,
+            itemsCustom : false,
+            itemsDesktop : [1199,4],
+            itemsDesktopSmall : [980,3],
+            itemsTablet: [768,2],
+            itemsTabletSmall: false,
+            itemsMobile : [479,1],
+            singleItem : true,
+            itemsScaleUp : true,
 
-        //Autoplay
-        autoPlay : true,
-        stopOnHover : false,
+            //Basic Speeds
+            slideSpeed : 200,
+            paginationSpeed : 800,
+            rewindSpeed : 1000,
 
-        // Navigation
-        navigation : false,
-        navigationText : ["prev","next"],
-        rewindNav : true,
-        scrollPerPage : false,
+            //Autoplay
+            autoPlay : true,
+            stopOnHover : false,
 
-        //Pagination
-        pagination : false,
-        paginationNumbers: false,
+            // Navigation
+            navigation : false,
+            navigationText : ["prev","next"],
+            rewindNav : true,
+            scrollPerPage : false,
 
-        // Responsive 
-        responsive: true,
-        responsiveRefreshRate : 200,
-        responsiveBaseWidth: window,
+            //Pagination
+            pagination : false,
+            paginationNumbers: false,
 
-        // CSS Styles
-        baseClass : "owl-carousel",
-        theme : "owl-theme",
+            // Responsive 
+            responsive: true,
+            responsiveRefreshRate : 200,
+            responsiveBaseWidth: window,
 
-        //Lazy load
-        lazyLoad : false,
-        lazyFollow : true,
-        lazyEffect : "fade",
+            // CSS Styles
+            baseClass : "owl-carousel",
+            theme : "owl-theme",
 
-        //Auto height
-        autoHeight : false,
+            //Lazy load
+            lazyLoad : false,
+            lazyFollow : true,
+            lazyEffect : "fade",
 
-        //JSON 
-        jsonPath : false, 
-        jsonSuccess : false,
+            //Auto height
+            autoHeight : false,
 
-        //Mouse Events
-        dragBeforeAnimFinish : true,
-        mouseDrag : false,
-        touchDrag : false,
+            //JSON 
+            jsonPath : false, 
+            jsonSuccess : false,
 
-        //Transitions
-        transitionStyle : "fade",
+            //Mouse Events
+            dragBeforeAnimFinish : true,
+            mouseDrag : false,
+            touchDrag : false,
 
-        // Other
-        addClassActive : false,
+            //Transitions
+            transitionStyle : "fade",
 
-        //Callbacks
-        beforeUpdate : false,
-        afterUpdate : false,
-        beforeInit: false, 
-        afterInit: false, 
-        beforeMove: false, 
-        afterMove: false,
-        afterAction: false,
-        startDragging : false,
-        afterLazyLoad : false
+            // Other
+            addClassActive : false,
 
-    })
- 
-});
+            //Callbacks
+            beforeUpdate : false,
+            afterUpdate : false,
+            beforeInit: false, 
+            afterInit: false, 
+            beforeMove: false, 
+            afterMove: false,
+            afterAction: false,
+            startDragging : false,
+            afterLazyLoad : false
+
+        })
+    }
+    
+    $(document).ready(function() {
+        initShowcaseSlide();
+
+        initOwlCarousel();
+    });
+}());
