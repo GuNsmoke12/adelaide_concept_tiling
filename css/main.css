@@ -1393,6 +1393,16 @@ h4 {
   text-transform: uppercase;
   color: #8b8b8b; }
 
+h6 {
+  font-size: 0.81em;
+  line-height: 1.53em;
+  letter-spacing: 1px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #8b8b8b;
+  margin-bottom: 1em;
+  display: inline; }
+
 .header {
   text-align: center; }
   .header li {
@@ -1510,6 +1520,20 @@ h4 {
 
 .social {
   margin: 0 5%; }
+  .social .post {
+    overflow: auto;
+    border-top: 1px solid #f5f5f5;
+    padding: 2em 0; }
+    .social .post:first-child {
+      border: none; }
+  .social .post_message .profile_pic {
+    margin-right: 1em; }
+  .social .post_message h6 {
+    color: #f47e2a; }
+  .social .post_image {
+    padding-right: 2em; }
+    .social .post_image img {
+      width: 100%; }
 
 .contact_wrapper {
   padding: 10em 0; }

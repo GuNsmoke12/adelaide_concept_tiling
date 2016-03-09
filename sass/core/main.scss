@@ -66,6 +66,17 @@ h4 {
     color: $h4Color;
 }
 
+h6 {
+    font-size: 0.81em;
+    line-height: 1.53em;
+    letter-spacing: 1px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: $h4Color;
+    margin-bottom: 1em;
+    display: inline;
+}
+
 //Header
 
 .header {
@@ -260,6 +271,34 @@ h4 {
 
 .social {
     margin: $sectionMargin;
+    
+    .post {
+        overflow: auto;
+        border-top: 1px solid $sectionBgColor;
+        padding: 2em 0;
+        
+        &:first-child {
+            border: none;
+        }
+    }
+    
+    .post_message {
+        .profile_pic {
+            margin-right: 1em;    
+        }
+        
+        h6 {
+            color: $logoOrange;
+        }
+    }
+    
+    .post_image {
+        padding-right: 2em;
+        
+        img {
+            width: 100%;
+        }
+    }
 }
 
 //Contact
