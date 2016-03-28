@@ -19,7 +19,6 @@ function initShowcaseSlide () {
 
 function initOwlCarousel () {
     $("#owl-carousel").owlCarousel({
-
             // Most important owl features
         items : 5,
         itemsCustom : false,
