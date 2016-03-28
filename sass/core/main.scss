@@ -8,6 +8,7 @@
 
 $globalFontFamily: Raleway, sans-serif;
 
+$generalFontSize: 0.81em;
 $generalTextColor: #8d8d8d;
 $headerLinkColor: black;
 $headerLinkColorHover: red;
@@ -34,7 +35,7 @@ body {
 }
 
 p {
-    font-size: 0.81em;
+    font-size: $generalFontSize;
 }
 
 h2 {
@@ -73,19 +74,37 @@ h6 {
     font-weight: 700;
     text-transform: uppercase;
     color: $h4Color;
-    margin-bottom: 1em;
     display: inline;
+}
+
+.facebook_button {
+  background-color: #3B5998;
+  color: white;
+  padding: 0.5em 1em;
+  border-radius: 5px;
+  display: inline-block;
+  margin: 1em 0;
+
+  i {
+    padding-right: 0.8em;
+    margin-right: 0.8em;
+    border-right: 1px solid #344D82;
+  }
+
+  &:hover {
+    background-color: #1e3a74;
+  }
 }
 
 //Header
 
 .header {
     text-align: center;
-    
+
     li {
         display: inline-block;
     }
-    
+
     a {
         font-weight: 700;
         letter-spacing: 2px;
@@ -93,7 +112,7 @@ h6 {
         padding: 0 1.5em;
         color: $headerLinkColor;
         transition: color 0.3s;
-        
+
         &:hover {
             color: $headerLinkColorHover;
         }
@@ -108,38 +127,38 @@ h6 {
 
 .headliner {
     height: 400px;
-    
+
     .owl-carousel {
         height: 100%;
     }
-    
+
     .owl-wrapper-outer {
         height: 100%;
     }
-    
+
     .owl-wrapper {
         height: 100%;
     }
-    
+
     .owl-item {
         height: 100%;
     }
-    
+
     .carousel_image {
         height: 100%;
         width: 100%;
         background-color: red;
         background-size: cover;
         background-position: center center;
-        
+
         &-1 {
             background-image: url(../../images/carousel_images/bathroom.jpg)
         }
-        
+
         &-2 {
             background-image: url(../../images/carousel_images/exterior_feature_wall.jpg)
         }
-        
+
         &-3 {
             background-image: url(../../images/carousel_images/front_entrance.jpg)
         }
@@ -170,11 +189,11 @@ h6 {
 
 .service_items {
     text-align: center;
-    
+
     .service {
         margin-bottom: 4em;
     }
-    
+
     i {
         color: $logoOrange;
         font-size: 3em;
@@ -186,51 +205,51 @@ h6 {
 .showcase_wrapper {
     overflow: auto;
     padding: $sectionPadding;
-    
+
     .showcase_text {
         margin: $sectionMargin;
     }
 }
 
-.showcase {    
+.showcase {
     &-item {
         height: 280px;
         position: relative;
         overflow: hidden;
     }
-    
+
     &-item-1 {
         background-image: url(../../images/carousel_images/bathroom.jpg)
     }
-    
+
     &-item-2 {
         background-image: url(../../images/carousel_images/exterior_feature_wall.jpg)
     }
-    
+
     &-item-3 {
         background-image: url(../../images/carousel_images/front_entrance.jpg)
     }
-    
+
     &-item-4 {
         background-image: url(../../images/carousel_images/home_exterior_full.jpg)
     }
-    
+
     &-item-5 {
         background-image: url(../../images/carousel_images/pool.jpg)
     }
-    
+
     &-item-6 {
         background-image: url(../../images/carousel_images/water_feature.jpg)
     }
-    
+
     &-item-7 {
         background-image: url(../../images/carousel_images/home_exterior_left.jpg)
     }
-    
+
     &-item-8 {
         background-image: url(../../images/carousel_images/water_feature_wall.jpg)
     }
-    
+
     &-image {
         width: 100%;
         height: 100%;
@@ -238,7 +257,7 @@ h6 {
         background-position: center center;
         background-size: cover;
     }
-    
+
     &-popup {
         background-color: $logoOrange;
         background-color: rgba(244,126,42,0.9);
@@ -249,13 +268,13 @@ h6 {
         height: 100%;
         display: table;
     }
-    
+
     &-popup-centering {
         display: table-cell;
         vertical-align: middle;
         text-align: center;
     }
-    
+
     a:focus {
         outline: none;
         border: none;
@@ -271,34 +290,55 @@ h6 {
 
 .social {
     margin: $sectionMargin;
-    
-    .post {
-        overflow: auto;
-        border-top: 1px solid $sectionBgColor;
-        padding: 2em 0;
-        
-        &:first-child {
-            border: none;
-        }
+
+    .post_wrapper {
+        background-color: #EFEFEF;
+        padding: 0.5em;
     }
-    
+
     .post_message {
-        .profile_pic {
-            margin-right: 1em;    
+        p {
+            color: $h1Color;
         }
-        
-        h6 {
-            color: $logoOrange;
+
+        .post_date {
+            display: block;
+            margin: 1em 0;
+            font-size: $generalFontSize;
         }
     }
-    
+
     .post_image {
-        padding-right: 2em;
-        
         img {
             width: 100%;
+            margin-bottom: 1em;
         }
     }
+
+    .post_count {
+        margin-right: 1em;
+
+        i {
+            margin-right: 0.3em;
+        }
+    }
+
+    .post_link {
+      font-size: $generalFontSize;
+      float: right;
+      line-height: 2em;
+      color: $generalTextColor;
+    }
+}
+
+.grid-sizer,
+.grid-item {
+    width: 23%;
+    margin-bottom: 2%;
+}
+
+.gutter-sizer {
+    width: 2%;
 }
 
 //Contact
@@ -309,4 +349,32 @@ h6 {
 
 .contact {
     margin: $sectionMargin;
+}
+
+
+// Media Query Overrides
+
+@media (max-width: 1024px) {
+    .grid-sizer,
+    .grid-item {
+        width: 32%;
+    }
+}
+
+@media (max-width: 767px) {
+    .grid-sizer,
+    .grid-item {
+        width: 49%;
+    }
+
+    .hideOnSmallScreen {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .grid-sizer,
+    .grid-item {
+        width: 99%;
+    }
 }
