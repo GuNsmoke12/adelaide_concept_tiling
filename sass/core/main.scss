@@ -55,7 +55,6 @@ h3 {
     font-weight: 700;
     text-transform: uppercase;
     color: $h3Color;
-    margin: 2em 0 1em;
 }
 
 h4 {
@@ -198,6 +197,10 @@ h6 {
         color: $logoOrange;
         font-size: 3em;
     }
+
+    h3 {
+        margin: 2em 0 1em;
+    }
 }
 
 //Showcase
@@ -286,17 +289,19 @@ h6 {
 .social_wrapper {
     padding: $sectionPadding;
     overflow: auto;
+    background-color: $sectionBgColor;
 }
 
 .social {
     margin: $sectionMargin;
 
     .post_wrapper {
-        background-color: #EFEFEF;
-        padding: 0.5em;
+        background-color: white;
     }
 
     .post_message {
+        padding: 1em;
+
         p {
             color: $h1Color;
         }
@@ -311,8 +316,11 @@ h6 {
     .post_image {
         img {
             width: 100%;
-            margin-bottom: 1em;
         }
+    }
+
+    .post_footer {
+        padding: 1em;
     }
 
     .post_count {
@@ -324,10 +332,15 @@ h6 {
     }
 
     .post_link {
-      font-size: $generalFontSize;
-      float: right;
-      line-height: 2em;
-      color: $generalTextColor;
+        font-size: $generalFontSize;
+        float: right;
+        line-height: 2em;
+        color: $generalTextColor;
+
+            &:hover {
+                color: $logoOrange;
+                text-decoration: underline;
+            }
     }
 }
 
@@ -351,6 +364,76 @@ h6 {
     margin: $sectionMargin;
 }
 
+.content_info_wrapper {
+    overflow: auto;
+}
+
+.contact_box {
+    .icon_circle {
+        background-color: #F47E2A;
+        font-size: 1.5em;
+        color: white;
+        text-align: center;
+        border-radius: 100%;
+        width: 2.5em;
+        height: 2.5em;
+        line-height: 2.5em;
+    }
+
+    .contact_info {
+        padding-left: 1.3em;
+    }
+
+    h3 {
+        margin: 0 0 0.7em 0;
+    }
+}
+
+.form {
+    margin-top: 4em;
+
+    .input_wrapper {
+        margin-bottom: 1em;
+
+        input:not(.submit), textarea {
+            border: 1px solid #a7a6a6;
+            width: 100%;
+            padding: 0.6em 1em;
+            font-size: $generalFontSize;
+
+            &:focus {
+                outline: 0;
+                border-color: $logoOrange;
+            }
+        }
+
+        textarea {
+            min-height: 12em;
+        }
+    }
+
+    .submit {
+        padding: 1em 1.5em;
+        border: 2px solid $logoOrange;
+        font-size: $generalFontSize;
+        font-weight: 800;
+        color: white;
+        background-color: $logoOrange;
+        cursor: pointer;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        white-space: nowrap;
+        transition: all 0.3s;
+
+        &:hover {
+            color: $logoOrange;
+            background-color: transparent;
+        }
+    }
+}
+
+
+
 
 // Media Query Overrides
 
@@ -369,6 +452,21 @@ h6 {
 
     .hideOnSmallScreen {
         display: none;
+    }
+
+    .contact_box {
+        .icon_circle {
+            margin: 0 auto 0.5em auto;
+        }
+
+        .contact_info {
+            margin-bottom: 2em;
+            text-align: center;
+        }
+    }
+
+    .submit {
+        width: 100%;
     }
 }
 

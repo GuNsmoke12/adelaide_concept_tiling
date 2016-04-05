@@ -198,5 +198,5 @@ $(document).ready(function() {
 
     initOwlCarousel();
 
-    loadFeed();
+    //loadFeed();
 });
