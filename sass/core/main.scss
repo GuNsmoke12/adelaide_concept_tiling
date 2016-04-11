@@ -10,8 +10,7 @@ $globalFontFamily: Raleway, sans-serif;
 
 $generalFontSize: 0.81em;
 $generalTextColor: #8d8d8d;
-$headerLinkColor: black;
-$headerLinkColorHover: red;
+$headerLinkColor: white;
 $h1Color: #393939;
 $h2Color: #393939;
 $h3Color: #393939;
@@ -38,6 +37,8 @@ body {
 p {
     font-size: $generalFontSize;
 }
+
+h1 {}
 
 h2 {
     font-size: 2.5em;
@@ -77,6 +78,20 @@ h6 {
     display: inline;
 }
 
+.slide_overlays {
+    h2 {
+        color: $headerLinkColor;
+        font-size: 3.75em;
+        letter-spacing: 5px;
+        line-height: 1em;
+        font-weight: 700;
+    }
+
+    h3 {
+        color: $headerLinkColor;
+    }
+}
+
 .facebook_button {
   background-color: #3B5998;
   color: white;
@@ -98,15 +113,27 @@ h6 {
 
 //Header
 
+.header_wrapper {
+    position: absolute;
+    z-index: 5;
+    width: 100%;
+}
+
 .header {
     text-align: center;
 
     li {
         display: inline-block;
+
+        &:not(.header_logo) {
+            position: relative;
+            top: -3.5em;
+        }
     }
 
     a {
         font-weight: 700;
+        font-size: $generalFontSize;
         letter-spacing: 2px;
         text-transform: uppercase;
         padding: 0 1.5em;
@@ -114,15 +141,32 @@ h6 {
         transition: color 0.3s;
 
         &:hover {
-            color: $headerLinkColorHover;
+            color: $logoOrange;
         }
+    }
+}
+
+.header_logo {
+    line-height: 1em;
+
+    .logo_wrapper {
+        max-width: 60px;
+        margin: 0 auto;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    span {
+
     }
 }
 
 //Headline
 
 .headliner_wrapper {
-    padding: $sectionPadding;
+    // padding: $sectionPadding;
 }
 
 .headliner {
@@ -147,7 +191,7 @@ h6 {
     .carousel_image {
         height: 100%;
         width: 100%;
-        background-color: red;
+        background-color: gray;
         background-size: cover;
         background-position: center center;
 
@@ -162,6 +206,18 @@ h6 {
         &-3 {
             background-image: url(../../images/carousel_images/front_entrance.jpg)
         }
+    }
+}
+
+.slide_overlays {
+    position: absolute;
+    top: 45%;
+    width: 100%;
+    text-align: center;
+
+    .overlay {
+        max-width: 1100px;
+        margin: 0 auto;
     }
 }
 
@@ -217,7 +273,7 @@ h6 {
 
 .showcase {
     &-item {
-        height: 280px;
+        height: 430px;
         position: relative;
         overflow: hidden;
     }

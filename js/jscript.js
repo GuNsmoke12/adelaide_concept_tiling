@@ -193,10 +193,25 @@ function initMasonryGrid() {
     });
 }
 
+function adjustHeadlinerHeight() {
+    var windowHeight = $(window).height();
+
+    $('.headliner').css({'height':windowHeight+'px'});
+}
+
 $(document).ready(function() {
+    var resizeTimer;
+
     initShowcaseSlide();
 
     initOwlCarousel();
 
     //loadFeed();
+
+    adjustHeadlinerHeight();
+
+    $(window).resize( function() {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(adjustHeadlinerHeight, 100);
+    });
 });

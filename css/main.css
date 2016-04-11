@@ -1401,6 +1401,15 @@ h6 {
   color: #8b8b8b;
   display: inline; }
 
+.slide_overlays h2 {
+  color: white;
+  font-size: 3.75em;
+  letter-spacing: 5px;
+  line-height: 1em;
+  font-weight: 700; }
+.slide_overlays h3 {
+  color: white; }
+
 .facebook_button {
   background-color: #3B5998;
   color: white;
@@ -1415,22 +1424,36 @@ h6 {
   .facebook_button:hover {
     background-color: #1e3a74; }
 
+.header_wrapper {
+  position: absolute;
+  z-index: 5;
+  width: 100%; }
+
 .header {
   text-align: center; }
   .header li {
     display: inline-block; }
+    .header li:not(.header_logo) {
+      position: relative;
+      top: -3.5em; }
   .header a {
     font-weight: 700;
+    font-size: 0.81em;
     letter-spacing: 2px;
     text-transform: uppercase;
     padding: 0 1.5em;
-    color: black;
+    color: white;
     transition: color 0.3s; }
     .header a:hover {
-      color: red; }
+      color: #f47e2a; }
 
-.headliner_wrapper {
-  padding: 10em 0; }
+.header_logo {
+  line-height: 1em; }
+  .header_logo .logo_wrapper {
+    max-width: 60px;
+    margin: 0 auto; }
+    .header_logo .logo_wrapper img {
+      width: 100%; }
 
 .headliner {
   height: 400px; }
@@ -1445,7 +1468,7 @@ h6 {
   .headliner .carousel_image {
     height: 100%;
     width: 100%;
-    background-color: red;
+    background-color: gray;
     background-size: cover;
     background-position: center center; }
     .headliner .carousel_image-1 {
@@ -1454,6 +1477,15 @@ h6 {
       background-image: url(../../images/carousel_images/exterior_feature_wall.jpg); }
     .headliner .carousel_image-3 {
       background-image: url(../../images/carousel_images/front_entrance.jpg); }
+
+.slide_overlays {
+  position: absolute;
+  top: 45%;
+  width: 100%;
+  text-align: center; }
+  .slide_overlays .overlay {
+    max-width: 1100px;
+    margin: 0 auto; }
 
 .blerb_wrapper {
   padding: 10em 0; }
@@ -1486,7 +1518,7 @@ h6 {
     margin: 0 5%; }
 
 .showcase-item {
-  height: 280px;
+  height: 430px;
   position: relative;
   overflow: hidden; }
 .showcase-item-1 {
