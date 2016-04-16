@@ -18,9 +18,14 @@ function initShowcaseSlide () {
 }
 
 function initOwlCarousel () {
+    var loopSpeed = 8000,
+        transitionSpeed = 300,
+        itemsCount = $('.owl-carousel').children().length,
+        index = 1;
+
     $("#owl-carousel").owlCarousel({
             // Most important owl features
-        items : 5,
+        items : itemsCount,
         itemsCustom : false,
         itemsDesktop : [1199,4],
         itemsDesktopSmall : [980,3],
@@ -31,12 +36,12 @@ function initOwlCarousel () {
         itemsScaleUp : true,
 
         //Basic Speeds
-        slideSpeed : 200,
+        slideSpeed : transitionSpeed,
         paginationSpeed : 800,
         rewindSpeed : 1000,
 
         //Autoplay
-        autoPlay : true,
+        autoPlay : loopSpeed,
         stopOnHover : false,
 
         // Navigation
@@ -85,14 +90,49 @@ function initOwlCarousel () {
         beforeUpdate : false,
         afterUpdate : false,
         beforeInit: false,
-        afterInit: false,
+        afterInit: displayHeadlinerText,
         beforeMove: false,
-        afterMove: false,
+        afterMove: displayHeadlinerText,
         afterAction: false,
         startDragging : false,
         afterLazyLoad : false
 
     })
+
+    /* Owl Carousel's info object has been deprectiated, so I have to create my own item index counter,
+       to track what slide we are up to. */
+
+    function displayHeadlinerText() {
+        var slide = $('.headliner').find("[data-overlayindex='" + index + "']"),
+            timeout = loopSpeed - (transitionSpeed*2),
+            fadeSpeed = 800,
+            delay = 600,
+            delayer = 600,
+            ele;
+
+        slide.children().each( function() {
+            element = $(this);
+
+            // Fade in
+            (function(element) {
+                setTimeout( function() {
+                    element.show().animate({ opacity: 1, top: "-100px" }, fadeSpeed);
+                }, delay);
+            }(element));
+            delay += delayer;
+
+            // fade out
+            (function(element) {
+                setTimeout( function() {
+                    element.fadeOut(function() {
+                        element.css({opacity: 0, top: "0px"});
+                    })
+                }, timeout);
+            }(element));
+        });
+
+        index = (index >= itemsCount) ? 1 : index+1;
+    }
 }
 
 
