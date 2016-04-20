@@ -135,6 +135,17 @@ function initOwlCarousel () {
     }
 }
 
+function adjustHeadlinerHeight() {
+    var windowHeight = $(window).height();
+
+    $('.headliner').css({'height':windowHeight+'px'});
+}
+
+function initFormValidator() {
+    $.validate({
+      form : '#contact_form'
+    });
+}
 
 function loadFeed () {
     var imagesData, likesData, id, i, x, y, imagesArray,
@@ -233,12 +244,6 @@ function initMasonryGrid() {
     });
 }
 
-function adjustHeadlinerHeight() {
-    var windowHeight = $(window).height();
-
-    $('.headliner').css({'height':windowHeight+'px'});
-}
-
 // Adding easing function to JQuery for use in animations
 (function() {
     $.extend(jQuery.easing,{easeOutQuint:function(x,t,b,c,d) {
@@ -255,9 +260,11 @@ $(document).ready(function() {
 
     initOwlCarousel();
 
-    //loadFeed();
-
     adjustHeadlinerHeight();
+
+    initFormValidator();
+
+    //loadFeed();
 
     $(window).resize( function() {
         clearTimeout(resizeTimer);

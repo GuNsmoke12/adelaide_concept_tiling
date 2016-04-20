@@ -458,6 +458,10 @@ h6 {
     .input_wrapper {
         margin-bottom: 1em;
 
+        &:nth-child(odd) {
+            clear: left;
+        }
+
         input:not(.submit), textarea {
             border: 1px solid #a7a6a6;
             width: 100%;
