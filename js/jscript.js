@@ -18,7 +18,7 @@ function initShowcaseSlide () {
 }
 
 function initOwlCarousel () {
-    var loopSpeed = 8000,
+    var loopSpeed = 6000,
         transitionSpeed = 300,
         itemsCount = $('.owl-carousel').children().length,
         index = 1;
@@ -116,7 +116,7 @@ function initOwlCarousel () {
             // Fade in
             (function(element) {
                 setTimeout( function() {
-                    element.show().animate({ opacity: 1, top: "-100px" }, fadeSpeed);
+                    element.show().animate({ opacity: 1, top: "-100px" }, fadeSpeed, "easeOutQuint");
                 }, delay);
             }(element));
             delay += delayer;
@@ -238,6 +238,15 @@ function adjustHeadlinerHeight() {
 
     $('.headliner').css({'height':windowHeight+'px'});
 }
+
+// Adding easing function to JQuery for use in animations
+(function() {
+    $.extend(jQuery.easing,{easeOutQuint:function(x,t,b,c,d) {
+        t /= d;
+    	t--;
+    	return c*(t*t*t*t*t + 1) + b;
+    }})
+}());
 
 $(document).ready(function() {
     var resizeTimer;
