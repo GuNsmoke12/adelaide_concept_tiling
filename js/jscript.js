@@ -1,5 +1,94 @@
 var postsData;
 
+function initValidator() {
+    generateCaptchaCode();
+
+    jQuery.validator.addMethod('captchaCheck', function (value, element) {
+        var captchaCode = $('.captcha_code').text(),
+            inputCode = $('.captcha_input').val();
+
+        if (captchaCode === inputCode) {
+            return true;
+        } else {
+            return false;
+        }
+    }, "Your verification input is incorrect");
+
+    // validate contact form
+    $(function() {
+        $('#contact_form').validate({
+            rules: {
+                firstName: {
+                    required: true
+                },
+                lastName: {
+                    required: true
+                },
+                email: {
+                    required: true,
+                    email: true
+                },
+                phone: {
+                    required: true
+                },
+                message: {
+                    required: true
+                },
+                captcha: {
+                    required: true,
+                    captchaCheck: true
+                }
+            },
+            messages: {
+                firstName: {
+                    required: "Please enter your first name"
+                },
+                lastName: {
+                    required: "Please enter your last name"
+                },
+                email: {
+                    required: "Please enter a valid email"
+                },
+                phone: {
+                    required: "Please enter a phone number"
+                },
+                message: {
+                    required: "Please include a message to send"
+                },
+                captcha: {
+                    required: "Please complete the verification"
+                }
+            },
+            submitHandler: function(form) {
+                $(form).ajaxSubmit({
+                    type:"POST",
+                    data: $(form).serialize(),
+                    url:"process.php",
+                    success: function() {
+                        $('input, textarea').not('.submit').val('');
+                        $('.contact_success').fadeIn();
+                    },
+                    error: function() {
+                        $('.contact_failed').fadeIn();
+                    }
+                });
+            }
+        });
+    });
+}
+
+function generateCaptchaCode() {
+    var i,
+        code = "",
+        possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+    for (i=0; i < 5; i++) {
+        code += possible.charAt(Math.floor(Math.random() * possible.length));
+    }
+
+    $('.captcha_code').text(code);
+}
+
 function initShowcaseSlide () {
     var duration = 300;
 
@@ -141,12 +230,6 @@ function adjustHeadlinerHeight() {
     $('.headliner').css({'height':windowHeight+'px'});
 }
 
-function initFormValidator() {
-    $.validate({
-      form : '#contact_form'
-    });
-}
-
 function loadFeed () {
     var imagesData, likesData, id, i, x, y, imagesArray,
         postsUrl = 'https://graph.facebook.com/v2.5/adelaideconcepttiling/posts?access_token=1703185049966389%7CnLQl9at6iYAmMzH85XQINKXbf8g',
@@ -262,8 +345,7 @@ $(document).ready(function() {
 
     adjustHeadlinerHeight();
 
-    initFormValidator();
-
+    initValidator();
     //loadFeed();
 
     $(window).resize( function() {

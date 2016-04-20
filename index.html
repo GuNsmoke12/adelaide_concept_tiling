@@ -34,14 +34,14 @@
     <link rel="stylesheet" href="css/owl.theme.css">
     <link rel="stylesheet" href="css/owl.transitions.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-    <link href="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.2.8/theme-default.min.css" rel="stylesheet" type="text/css">
 
     <!--Custom stylesheets-->
     <link rel="stylesheet" type="text/css" href="css/main.css">
 
     <!--Additional scripts-->
     <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.2.8/jquery.form-validator.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.form/3.32/jquery.form.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.11.1/jquery.validate.min.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="https://npmcdn.com/masonry-layout@4.0/dist/masonry.pkgd.min.js"></script>
     <script src="https://npmcdn.com/imagesloaded@4.1/imagesloaded.pkgd.min.js"></script>
@@ -262,27 +262,41 @@
                         </div>
                     </div>
                 </div>
-                <div class="form">
-                    <form id="contact_form" autocomplete="on">
-                        <div class="input_wrapper grid-50 tablet-grid-50">
-                            <input type="text" name="firstName" placeholder="First Name" data-validation="alphanumeric" required />
-                        </div>
-                        <div class="input_wrapper grid-50 tablet-grid-50">
-                            <input type="text" name="lastName" placeholder="Last Name" data-validation="alphanumeric" required />
-                        </div>
-                        <div class="input_wrapper grid-50 tablet-grid-50">
-                            <input type="email" name="email" placeholder="E-mail" data-validation="email" required />
-                        </div>
-                        <div class="input_wrapper grid-50 tablet-grid-50">
-                            <input type="text" name="phone" placeholder="Phone Number" data-validation="custom length" data-validation-regexp="^[0-9 ]+$" data-validation-length="min8" required />
-                        </div>
-                        <div class="input_wrapper grid-100 tablet-grid-100">
-                            <textarea name="message" placeholder="Message..." required></textarea>
-                        </div>
-                        <div class="input_wrapper grid-100 tablet-grid-100">
-                            <input class="submit" type="submit" name="submit" value="Contact Us" />
-                        </div>
+                <div class="form_wrapper">
+                    <form id="contact_form" name="contact_form" method="post" autocomplete="on">
+                        <fieldset>
+                            <div class="input_wrapper grid-50 tablet-grid-50">
+                                <input type="text" name="firstName" placeholder="First Name" required />
+                            </div>
+                            <div class="input_wrapper grid-50 tablet-grid-50">
+                                <input type="text" name="lastName" placeholder="Last Name" required />
+                            </div>
+                            <div class="input_wrapper grid-50 tablet-grid-50">
+                                <input type="email" name="email" placeholder="E-mail" required />
+                            </div>
+                            <div class="input_wrapper grid-50 tablet-grid-50">
+                                <input type="text" name="phone" placeholder="Phone Number" required />
+                            </div>
+                            <div class="input_wrapper grid-100 tablet-grid-100">
+                                <textarea name="message" placeholder="Message..." required></textarea>
+                            </div>
+                            <div class="input_wrapper grid-100 tablet-grid-100">
+                                <label for="captcha" class="captcha_label">Verification: Please type <span class="captcha_code">meow</span></label>
+                                <input class="captcha_input" type="text" name="captcha" value="" required/>
+                            </div>
+                            <div class="input_wrapper grid-100 tablet-grid-100">
+                                <input id="submit" class="submit" type="submit" name="submit" value="Contact Us" />
+                            </div>
+                        </fieldset>
                     </form>
+
+                    <div class="contact_success">
+                        <p>Your message was sent succssfully! I will be in touch as soon as I can.</p>
+                    </div>
+
+                    <div class="contact_failed">
+                        <p>Something went wrong, try refreshing and submitting the form again.</p>
+                    </div>
                 </div>
             </div>
         </div>

@@ -1630,23 +1630,44 @@ h6 {
 .contact_box h3 {
   margin: 0 0 0.7em 0; }
 
-.form {
+.form_wrapper {
   margin-top: 4em; }
-  .form .input_wrapper {
+  .form_wrapper .input_wrapper {
     margin-bottom: 1em; }
-    .form .input_wrapper:nth-child(odd) {
+    .form_wrapper .input_wrapper:nth-child(odd) {
       clear: left; }
-    .form .input_wrapper input:not(.submit), .form .input_wrapper textarea {
+    .form_wrapper .input_wrapper input:not(.submit), .form_wrapper .input_wrapper textarea {
       border: 1px solid #a7a6a6;
       width: 100%;
       padding: 0.6em 1em;
-      font-size: 0.81em; }
-      .form .input_wrapper input:not(.submit):focus, .form .input_wrapper textarea:focus {
+      font-size: 0.81em;
+      color: #393939; }
+      .form_wrapper .input_wrapper input:not(.submit):focus, .form_wrapper .input_wrapper textarea:focus {
         outline: 0;
         border-color: #f47e2a; }
-    .form .input_wrapper textarea {
+      .form_wrapper .input_wrapper input:not(.submit).error, .form_wrapper .input_wrapper textarea.error {
+        border-color: red; }
+    .form_wrapper .input_wrapper textarea {
       min-height: 12em; }
-  .form .submit {
+    .form_wrapper .input_wrapper label {
+      font-size: 0.81em; }
+      .form_wrapper .input_wrapper label.error {
+        color: red; }
+  .form_wrapper .contact_success, .form_wrapper .contact_failed {
+    display: none; }
+  .form_wrapper .contact_success {
+    color: #9bd32d; }
+  .form_wrapper .contact_failed {
+    color: #c0392b; }
+  .form_wrapper .captcha_code {
+    font-weight: 800;
+    color: #f47e2a;
+    letter-spacing: 1px;
+    background-color: #F9F5F1;
+    padding: 4px 9px;
+    margin: 3px;
+    display: inline-block; }
+  .form_wrapper .submit {
     padding: 1em 1.5em;
     border: 2px solid #f47e2a;
     font-size: 0.81em;
@@ -1658,7 +1679,7 @@ h6 {
     letter-spacing: 2px;
     white-space: nowrap;
     transition: all 0.3s; }
-    .form .submit:hover {
+    .form_wrapper .submit:hover {
       color: #f47e2a;
       background-color: transparent; }
 
