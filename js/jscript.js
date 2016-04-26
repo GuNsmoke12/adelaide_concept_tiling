@@ -1,5 +1,32 @@
 var postsData;
 
+function initSmoothScrollSettings() {
+    SmoothScroll({
+        // Scrolling Core
+        animationTime    : 500, // [ms]
+        stepSize         : 40, // [px]
+
+        // Acceleration
+        accelerationDelta : 50,  // 50
+        accelerationMax   : 3,   // 3
+
+        // Keyboard Settings
+        keyboardSupport   : true,  // option
+        arrowScroll       : 50,    // [px]
+
+        // Pulse (less tweakable)
+        // ratio of "tail" to "acceleration"
+        pulseAlgorithm   : true,
+        pulseScale       : 4,
+        pulseNormalize   : 1,
+
+        // Other
+        touchpadSupport   : false, // ignore touchpad by default
+        fixedBackground   : true,
+        excluded          : ''
+    });
+}
+
 function initValidator() {
     generateCaptchaCode();
 
@@ -336,6 +363,22 @@ function initMasonryGrid() {
     }})
 }());
 
+function initLinkSmoothScroll() {
+    $('a[href^="#"]').on('click',function (e) {
+	    e.preventDefault();
+
+	    var target = this.hash,
+            $target = $(target),
+            distance = Math.abs($(window).scrollTop() - $target.offset().top),
+            timeperpixel = 0.92,
+            time = Math.pow(distance, timeperpixel);
+
+	    $('html, body').stop().animate({
+	        'scrollTop': $target.offset().top
+	    }, time, 'swing');
+	});
+}
+
 $(document).ready(function() {
     var resizeTimer;
 
@@ -350,6 +393,10 @@ $(document).ready(function() {
 
     $(window).resize( function() {
         clearTimeout(resizeTimer);
-        resizeTimer = setTimeout(adjustHeadlinerHeight, 100);
+        resizeTimer = setTimeout(adjustHeadlinerHeight, 10);
     });
+
+    initSmoothScrollSettings();
+
+    initLinkSmoothScroll();
 });
