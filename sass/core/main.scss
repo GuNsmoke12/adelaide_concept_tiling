@@ -283,6 +283,7 @@ h6 {
         height: 430px;
         position: relative;
         overflow: hidden;
+        cursor: pointer;
     }
 
     &-item-1 {
@@ -327,7 +328,7 @@ h6 {
 
     &-popup {
         background-color: $logoOrange;
-        background-color: rgba(244,126,42,0.9);
+        background-color: rgb(244,126,42);
         color: white;
         position: absolute;
         top: 0;
@@ -572,6 +573,15 @@ h6 {
 .footer_contact {
     > div {
         margin-bottom: 1em;
+    }
+
+    a {
+        color: $generalTextColor;
+        transition: color 0.3s;
+
+        &:hover {
+            color: white;
+        }
     }
 
     .icon_circle {

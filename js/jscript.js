@@ -119,18 +119,27 @@ function generateCaptchaCode() {
 function initShowcaseSlide () {
     var duration = 300;
 
-    $('.showcase-popup').css('display','none');
+    $('.showcase-popup').hide();
+
+    if ('ontouchstart' in document.documentElement) {
+        $('.showcase-item').click( function() {
+            $(this).find('.showcase-popup').stop().fadeToggle(duration);
+        });
+    } else {
+        $('.showcase-item').click( function() {
+            $(this).find('.showcase-popup').stop().fadeToggle(duration);
+        });
+
+        $('.showcase-item').mouseenter( function() {
+            $(this).find('.showcase-popup').stop().fadeIn(duration);
+        }).mouseleave( function() {
+            $(this).find('.showcase-popup').stop().fadeOut(duration);
+        });
+    }
 
     $('.showcase-item').children().click( function (e) {
         e.preventDefault();
-        $(this).parent().find('.showcase-popup').stop().fadeToggle(duration);
     })
-
-    $('.showcase-item').mouseenter( function () {
-        $(this).find('.showcase-popup').stop().fadeIn(duration);
-    }).mouseleave( function () {
-        $(this).find('.showcase-popup').stop().fadeOut(duration);
-    });
 }
 
 function initOwlCarousel () {

@@ -1525,7 +1525,8 @@ h6 {
 .showcase-item {
   height: 430px;
   position: relative;
-  overflow: hidden; }
+  overflow: hidden;
+  cursor: pointer; }
 .showcase-item-1 {
   background-image: url(../../images/carousel_images/bathroom.jpg); }
 .showcase-item-2 {
@@ -1550,7 +1551,7 @@ h6 {
   background-size: cover; }
 .showcase-popup {
   background-color: #f47e2a;
-  background-color: rgba(244, 126, 42, 0.9);
+  background-color: #f47e2a;
   color: white;
   position: absolute;
   top: 0;
@@ -1705,6 +1706,11 @@ h6 {
 
 .footer_contact > div {
   margin-bottom: 1em; }
+.footer_contact a {
+  color: #8d8d8d;
+  transition: color 0.3s; }
+  .footer_contact a:hover {
+    color: white; }
 .footer_contact .icon_circle {
   background-color: #F47E2A;
   font-size: 1em;
