@@ -255,6 +255,10 @@ h6 {
 
     .service {
         margin-bottom: 4em;
+
+        &:nth-child(4) {
+            clear: left;
+        }
     }
 
     i {
@@ -280,7 +284,7 @@ h6 {
 
 .showcase {
     &-item {
-        height: 430px;
+        height: 336px;
         position: relative;
         overflow: hidden;
         cursor: pointer;
@@ -452,6 +456,10 @@ h6 {
     h3 {
         margin: 0 0 0.7em 0;
     }
+
+    span {
+        display: inline-block;
+    }
 }
 
 .form_wrapper {
@@ -538,6 +546,11 @@ h6 {
 
 //Footer Map
 
+.footer_map {
+    height: 300px;
+    width: 100%;
+}
+
 // Footer Info
 
 .footer_info {
@@ -554,6 +567,8 @@ h6 {
 
     > div {
         margin-bottom: 4em;
+        border-left: 1px solid #444;
+        padding-left: 3em;
     }
 }
 
@@ -573,14 +588,41 @@ h6 {
 .footer_contact {
     > div {
         margin-bottom: 1em;
+        clear: both;
+        overflow: auto;
+
+        span {
+            display: inline-block;
+        }
     }
 
     a {
         color: $generalTextColor;
         transition: color 0.3s;
+        display: inline-block;
 
         &:hover {
             color: white;
+        }
+    }
+
+    .fa {
+        position: relative;
+
+        &.fa-map-marker {
+            left: -1px;
+        }
+
+        &.fa-phone {
+            left: -2px;
+        }
+
+        &.fa-envelope {
+            left: -3px;
+        }
+
+        &.fa-facebook {
+            left: -1px;
         }
     }
 
@@ -626,6 +668,14 @@ h6 {
     .grid-item {
         width: 32%;
     }
+
+    .service_items {
+        .service {
+            &:nth-child(4) {
+                clear: none;
+            }
+        }
+    }
 }
 
 @media (max-width: 767px) {
@@ -661,6 +711,7 @@ h6 {
             width: auto;
             height: auto;
             line-height: auto;
+            margin-right: 0;
         }
     }
 }

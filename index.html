@@ -50,6 +50,10 @@
     <!--Custom scripts-->
     <script type="text/javascript" src="js/jscript.js"></script>
 
+    <!-- Loading Google Maps -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDM3CMFYN9cJwOkTLZEoPZNvLIC4XEQgok&callback=initGoogleMaps" async defer></script>
+
+
 </head>
 <body>
     <div class="header_wrapper">
@@ -259,7 +263,7 @@
                         <div class="icon_circle grid-30 tablet-grid-30"><i class="fa fa-envelope"></i></div>
                         <div class="contact_info grid-70 tablet-grid-70">
                             <h3>E-mail</h3>
-                            <p>adelaideconcepttiling@gmail.com</p>
+                            <p><span>adelaideconcepttiling</span><span>@gmail.com</span></p>
                         </div>
                     </div>
                 </div>
@@ -303,7 +307,19 @@
         </div>
     </div>
     <div class="footer">
-        <div class="footer_map"></div>
+        <div class="footer_map" id="map">
+            <!-- <iframe width="100%" height="300" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJGbuJngXKsGoRMMWOYlQ2AwU&key=AIzaSyDM3CMFYN9cJwOkTLZEoPZNvLIC4XEQgok&zoom=13" allowfullscreen></iframe> -->
+        </div>
+        <!-- <script>
+            var map;
+                function initMap() {
+                    map = new google.maps.Map(document.getElementById('map'), {
+                    center: {lat: -34.397, lng: 150.644},
+                    zoom: 13
+                });
+            }
+        </script> -->
+        <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDM3CMFYN9cJwOkTLZEoPZNvLIC4XEQgok&callback=initMap" async defer></script> -->
         <div class="footer_info">
             <div class="footer_logo grid-33 tablet-grid-33">
                 <div class="logo_wrapper"><img src="images/logo.png"/></div>
@@ -312,16 +328,20 @@
             <div class="footer_contact grid-33 tablet-grid-33">
                 <h4>Contact Us</h4>
                 <div>
-                    <div class="icon_circle"><i class="fa fa-map-marker"></i></div><span>Windsor Gardens, Adelaide, South Australia 5073</span>
+                    <div class="grid-20 tablet-grid-20 icon_circle"><i class="fa fa-map-marker"></i></div>
+                    <span class="grid-80 tablet-grid-80">Windsor Gardens, Adelaide, South Australia 5073</span>
                 </div>
                 <div>
-                    <div class="icon_circle"><i class="fa fa-phone"></i></div><span>+61&nbsp;432&nbsp;473&nbsp;286</span>
+                    <div class="grid-20 tablet-grid-20 icon_circle"><i class="fa fa-phone"></i></div>
+                    <span class="grid-80 tablet-grid-80">+61&nbsp;432&nbsp;473&nbsp;286</span>
                 </div>
                 <div>
-                    <div class="icon_circle"><i class="fa fa-envelope"></i></div><a href="mailto:adelaideconcepttiling@gmail.com">adelaideconcepttiling@gmail.com</a>
+                    <div class="grid-20 tablet-grid-20 icon_circle"><i class="fa fa-envelope"></i></div>
+                    <a class="grid-80 tablet-grid-80" href="mailto:adelaideconcepttiling@gmail.com"><span>adelaideconcepttiling</span><span>@gmail.com</span></a>
                 </div>
                 <div>
-                    <div class="icon_circle"><i class="fa fa-facebook"></i></div><a href="http://facebook.com/adelaideconcepttiling">facebook.com/adelaideconcepttiling</a>
+                    <div class="grid-20 tablet-grid-20 icon_circle"><i class="fa fa-facebook"></i></div>
+                    <a class="grid-80 tablet-grid-80" href="http://facebook.com/adelaideconcepttiling"><span>facebook.com/</span><span>adelaideconcepttiling</span></a>
                 </div>
             </div>
             <div class="footer_links grid-33 tablet-grid-33">

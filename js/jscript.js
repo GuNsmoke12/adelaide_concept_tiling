@@ -388,6 +388,35 @@ function initLinkSmoothScroll() {
 	});
 }
 
+function initGoogleMaps() {
+    var myLatLng = {lat: -34.864970, lng: 138.645419};
+    var image = 'images/map_marker.png';
+
+    var map = new google.maps.Map(document.getElementById('map'), {
+        center: myLatLng,
+        zoom: 13
+    });
+
+    var marker = new google.maps.Marker({
+        position: myLatLng,
+        map: map,
+        title: 'Windsor Gardens',
+        icon: image
+    });
+
+    var styles = [
+      {
+        "stylers": [
+          { "saturation": -100 },
+          { "gamma": 0.66 },
+          { "lightness": -61 }
+        ]
+      }
+    ];
+
+    map.setOptions({styles: styles});
+}
+
 $(document).ready(function() {
     var resizeTimer;
 
@@ -398,7 +427,8 @@ $(document).ready(function() {
     adjustHeadlinerHeight();
 
     initValidator();
-    //loadFeed();
+
+    loadFeed();
 
     $(window).resize( function() {
         clearTimeout(resizeTimer);

@@ -1510,6 +1510,8 @@ h6 {
   text-align: center; }
   .service_items .service {
     margin-bottom: 4em; }
+    .service_items .service:nth-child(4) {
+      clear: left; }
   .service_items i {
     color: #f47e2a;
     font-size: 3em; }
@@ -1523,7 +1525,7 @@ h6 {
     margin: 0 5%; }
 
 .showcase-item {
-  height: 430px;
+  height: 336px;
   position: relative;
   overflow: hidden;
   cursor: pointer; }
@@ -1630,6 +1632,8 @@ h6 {
   padding-left: 1.3em; }
 .contact_box h3 {
   margin: 0 0 0.7em 0; }
+.contact_box span {
+  display: inline-block; }
 
 .form_wrapper {
   margin-top: 4em; }
@@ -1684,6 +1688,10 @@ h6 {
       color: #f47e2a;
       background-color: transparent; }
 
+.footer_map {
+  height: 300px;
+  width: 100%; }
+
 .footer_info {
   overflow: auto;
   background-color: #393939;
@@ -1694,7 +1702,9 @@ h6 {
     font-size: 1em;
     margin-bottom: 1em; }
   .footer_info > div {
-    margin-bottom: 4em; }
+    margin-bottom: 4em;
+    border-left: 1px solid #444;
+    padding-left: 3em; }
 
 .footer_logo {
   text-align: center; }
@@ -1705,12 +1715,27 @@ h6 {
       width: 100%; }
 
 .footer_contact > div {
-  margin-bottom: 1em; }
+  margin-bottom: 1em;
+  clear: both;
+  overflow: auto; }
+  .footer_contact > div span {
+    display: inline-block; }
 .footer_contact a {
   color: #8d8d8d;
-  transition: color 0.3s; }
+  transition: color 0.3s;
+  display: inline-block; }
   .footer_contact a:hover {
     color: white; }
+.footer_contact .fa {
+  position: relative; }
+  .footer_contact .fa.fa-map-marker {
+    left: -1px; }
+  .footer_contact .fa.fa-phone {
+    left: -2px; }
+  .footer_contact .fa.fa-envelope {
+    left: -3px; }
+  .footer_contact .fa.fa-facebook {
+    left: -1px; }
 .footer_contact .icon_circle {
   background-color: #F47E2A;
   font-size: 1em;
@@ -1736,7 +1761,10 @@ h6 {
 @media (max-width: 1024px) {
   .grid-sizer,
   .grid-item {
-    width: 32%; } }
+    width: 32%; }
+
+  .service_items .service:nth-child(4) {
+    clear: none; } }
 @media (max-width: 767px) {
   .grid-sizer,
   .grid-item {
@@ -1760,7 +1788,8 @@ h6 {
       background-color: transparent;
       width: auto;
       height: auto;
-      line-height: auto; } }
+      line-height: auto;
+      margin-right: 0; } }
 @media (max-width: 480px) {
   .grid-sizer,
   .grid-item {
