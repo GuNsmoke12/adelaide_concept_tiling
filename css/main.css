@@ -1498,6 +1498,10 @@ h6 {
 .blerb {
   margin: 0 5%; }
 
+.parallax-window {
+  min-height: 400px;
+  background: transparent; }
+
 .services_wrapper {
   overflow: auto;
   background-color: #f5f5f5;
