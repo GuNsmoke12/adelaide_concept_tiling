@@ -385,6 +385,8 @@ function initLinkSmoothScroll() {
 	    $('html, body').stop().animate({
 	        'scrollTop': $target.offset().top
 	    }, time, 'swing');
+
+        toggleMobileNav("up");
 	});
 }
 
@@ -417,8 +419,33 @@ function initGoogleMaps() {
     map.setOptions({styles: styles});
 }
 
+function toggleMobileNav(slideFunction) {
+    if ($('.header_mobile').css('display') !== "none") {
+        switch (slideFunction) {
+            case "up":
+                $('.header').slideUp();
+                break;
+            case "toggle":
+            default:
+            $('.header').slideToggle();
+            break;
+        }
+    }
+}
+
+function mobileNavChanges() {
+    if ($(window).width() <= 767) {
+        $('.header_logo h1').html('Home');
+        $('.header').css('display','none');
+    } else {
+        $('.header_logo h1').html('Adelaide <br />Concept Tiling');
+        $('.header').css('display','block');
+    }
+}
+
 $(document).ready(function() {
-    var resizeTimer, headerFixedPos;
+    var resizeTimer, mobileNavTimer,
+        headerFixedPos = false;
 
     initShowcaseSlide();
 
@@ -432,6 +459,7 @@ $(document).ready(function() {
 
     $(window).resize( function() {
         clearTimeout(resizeTimer);
+        mobileNavChanges();
         resizeTimer = setTimeout(adjustHeadlinerHeight, 10);
     });
 
@@ -440,19 +468,21 @@ $(document).ready(function() {
     initLinkSmoothScroll();
 
     $(document).scroll(function() {
-        if ($(document).scrollTop() > $('.headliner_wrapper').height() - 10) {
-            if (headerFixedPos == false) {
+        if ($('.header_mobile').css('display') == "none") {
+            console.log(headerFixedPos);
+            if ($(document).scrollTop() > $('.headliner_wrapper').height() - 10 && headerFixedPos == false) {
                 $('.header_wrapper').hide().addClass('header_fixed').fadeIn();
-            }
-            headerFixedPos = true;
-        } else {
-            if (headerFixedPos == true) {
-                console.log('running fadeout');
+                headerFixedPos = true;
+            } else if ($(document).scrollTop() < $('.headliner_wrapper').height() - 10 && headerFixedPos == true) {
                 $('.header_wrapper').fadeOut( function() {
                     $(this).removeClass('header_fixed').show();
                 });
+                headerFixedPos = false;
             }
-            headerFixedPos = false;
         }
-    })
+    });
+
+    $('.hamburger').click( function() {
+        toggleMobileNav("toggle");
+    });
 });
