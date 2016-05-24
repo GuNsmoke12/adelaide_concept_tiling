@@ -418,7 +418,7 @@ function initGoogleMaps() {
 }
 
 $(document).ready(function() {
-    var resizeTimer;
+    var resizeTimer, headerFixedPos;
 
     initShowcaseSlide();
 
@@ -438,4 +438,21 @@ $(document).ready(function() {
     initSmoothScrollSettings();
 
     initLinkSmoothScroll();
+
+    $(document).scroll(function() {
+        if ($(document).scrollTop() > $('.headliner_wrapper').height() - 10) {
+            if (headerFixedPos == false) {
+                $('.header_wrapper').hide().addClass('header_fixed').fadeIn();
+            }
+            headerFixedPos = true;
+        } else {
+            if (headerFixedPos == true) {
+                console.log('running fadeout');
+                $('.header_wrapper').fadeOut( function() {
+                    $(this).removeClass('header_fixed').show();
+                });
+            }
+            headerFixedPos = false;
+        }
+    })
 });

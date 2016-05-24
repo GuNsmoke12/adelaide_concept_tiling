@@ -164,6 +164,29 @@ h6 {
     }
 }
 
+.header_fixed {
+    position: fixed;
+    background-color: white;
+
+    li:not(.header_logo) {
+        top: -1.7em;
+    }
+
+    a {
+        color: $h1Color;
+    }
+
+    .header_logo {
+        h1 {
+            display: none;
+        }
+
+        img {
+            width: 60%;
+        }
+    }
+}
+
 //Headline
 
 .headliner_wrapper {
@@ -370,6 +393,7 @@ h6 {
 
     .post_wrapper {
         background-color: white;
+        border: 1px solid rgb(226,226,226);
     }
 
     .post_message {
@@ -419,12 +443,12 @@ h6 {
 
 .grid-sizer,
 .grid-item {
-    width: 23%;
-    margin-bottom: 2%;
+    width: 24%;
+    margin-bottom: 0.5%;
 }
 
 .gutter-sizer {
-    width: 2%;
+    width: 0.5%;
 }
 
 //Contact
