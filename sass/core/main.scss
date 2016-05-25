@@ -714,7 +714,7 @@ h6 {
 @media (max-width: 767px) {
     .header_mobile {
         display: block;
-        margin: 1em 2em;
+        margin: 0.5em 2em;
 
         .hamburger {
             color: $h1Color;
@@ -767,6 +767,16 @@ h6 {
     .header_logo {
         .logo_wrapper {
             display: none;
+        }
+    }
+
+    .slide_overlays {
+        h2 {
+            font-size: 2.5em;
+        }
+
+        h3 {
+            font-size: 1em;
         }
     }
 

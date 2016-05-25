@@ -1789,7 +1789,7 @@ h6 {
 @media (max-width: 767px) {
   .header_mobile {
     display: block;
-    margin: 1em 2em; }
+    margin: 0.5em 2em; }
     .header_mobile .hamburger {
       color: #393939;
       font-size: 1.5em;
@@ -1824,6 +1824,11 @@ h6 {
 
   .header_logo .logo_wrapper {
     display: none; }
+
+  .slide_overlays h2 {
+    font-size: 2.5em; }
+  .slide_overlays h3 {
+    font-size: 1em; }
 
   .grid-sizer,
   .grid-item {

@@ -457,6 +457,8 @@ $(document).ready(function() {
 
     loadFeed();
 
+    mobileNavChanges();
+
     $(window).resize( function() {
         clearTimeout(resizeTimer);
         mobileNavChanges();
