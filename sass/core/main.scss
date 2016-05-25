@@ -8,7 +8,7 @@
 
 $globalFontFamily: Raleway, sans-serif;
 
-$generalFontSize: 0.81em;
+$generalFontSize: 0.84em;
 $generalTextColor: #8d8d8d;
 $headerLinkColor: white;
 $h1Color: #393939;
@@ -20,7 +20,7 @@ $errorColor: red;
 
 $sectionBgColor: #f5f5f5;
 $sectionBgDark : #393939;
-$sectionPadding: 10em 0;
+$sectionPadding: 5em 0;
 $sectionMargin: 0 5%;
 
 
@@ -37,6 +37,7 @@ body {
 
 p {
     font-size: $generalFontSize;
+    margin-bottom: 1em;
 }
 
 h1 {}
@@ -264,6 +265,28 @@ h6 {
 
 .blerb {
     margin: $sectionMargin;
+    overflow: auto;
+}
+
+.blerb_logos {
+    text-align: center;
+    overflow: auto;
+    margin-top: 2em;
+
+    span {
+        font-size: $generalFontSize;
+        font-weight: 600;
+    }
+
+    img {
+        max-width: 120px;
+        width: 80%;
+        margin-top: 1em;
+    }
+
+    #scottsalisburylogo {
+        max-width: 170px;
+    }
 }
 
 //Service
@@ -286,7 +309,7 @@ h6 {
     text-align: center;
 
     .service {
-        margin-bottom: 4em;
+        margin-bottom: 3em;
 
         &:nth-child(4) {
             clear: left;
@@ -308,6 +331,7 @@ h6 {
 .showcase_wrapper {
     overflow: auto;
     padding: $sectionPadding;
+    padding-bottom: 0;
 
     .showcase_text {
         margin: $sectionMargin;
