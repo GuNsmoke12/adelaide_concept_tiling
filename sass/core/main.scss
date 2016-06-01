@@ -204,6 +204,7 @@ h6 {
 
     .owl-carousel {
         height: 100%;
+        background-color: black;
     }
 
     .owl-wrapper-outer {
@@ -224,17 +225,18 @@ h6 {
         background-color: gray;
         background-size: cover;
         background-position: center center;
+        opacity: 0.5;
 
         &-1 {
-            background-image: url(../../images/carousel_images/bathroom.jpg)
+            background-image: url(../../images/carousel_images/bathroom.png)
         }
 
         &-2 {
-            background-image: url(../../images/carousel_images/exterior_feature_wall.jpg)
+            background-image: url(../../images/carousel_images/home_exterior_full.png)
         }
 
         &-3 {
-            background-image: url(../../images/carousel_images/front_entrance.jpg)
+            background-image: url(../../images/carousel_images/water_feature_wall.png)
         }
     }
 }
@@ -473,11 +475,11 @@ h6 {
 .grid-sizer,
 .grid-item {
     width: 24%;
-    margin-bottom: 0.5%;
+    margin-bottom: 1%;
 }
 
 .gutter-sizer {
-    width: 0.5%;
+    width: 1%;
 }
 
 //Contact
@@ -631,6 +633,8 @@ h6 {
 
 .footer_logo {
     text-align: center;
+    font-weight: 700;
+    text-transform: uppercase;
 
     .logo_wrapper {
         max-width: 80px;
@@ -746,6 +750,7 @@ h6 {
             float: left;
             margin-top: 0.2em;
             cursor: pointer;
+            position: absolute;
 
             &:hover {
                 color: $logoOrange;
@@ -821,6 +826,7 @@ h6 {
         .contact_info {
             margin-bottom: 2em;
             text-align: center;
+            padding-left: 10px;
         }
     }
 
@@ -837,6 +843,10 @@ h6 {
             height: auto;
             line-height: auto;
             margin-right: 0;
+        }
+
+        > div {
+            padding-left: 10px;
         }
     }
 }

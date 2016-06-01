@@ -1475,7 +1475,8 @@ h6 {
 .headliner {
   height: 400px; }
   .headliner .owl-carousel {
-    height: 100%; }
+    height: 100%;
+    background-color: black; }
   .headliner .owl-wrapper-outer {
     height: 100%; }
   .headliner .owl-wrapper {
@@ -1487,13 +1488,14 @@ h6 {
     width: 100%;
     background-color: gray;
     background-size: cover;
-    background-position: center center; }
+    background-position: center center;
+    opacity: 0.5; }
     .headliner .carousel_image-1 {
-      background-image: url(../../images/carousel_images/bathroom.jpg); }
+      background-image: url(../../images/carousel_images/bathroom.png); }
     .headliner .carousel_image-2 {
-      background-image: url(../../images/carousel_images/exterior_feature_wall.jpg); }
+      background-image: url(../../images/carousel_images/home_exterior_full.png); }
     .headliner .carousel_image-3 {
-      background-image: url(../../images/carousel_images/front_entrance.jpg); }
+      background-image: url(../../images/carousel_images/water_feature_wall.png); }
 
 .slide_overlays {
   position: absolute;
@@ -1643,10 +1645,10 @@ h6 {
 .grid-sizer,
 .grid-item {
   width: 24%;
-  margin-bottom: 0.5%; }
+  margin-bottom: 1%; }
 
 .gutter-sizer {
-  width: 0.5%; }
+  width: 1%; }
 
 .contact_wrapper {
   padding: 5em 0; }
@@ -1745,7 +1747,9 @@ h6 {
     padding-left: 3em; }
 
 .footer_logo {
-  text-align: center; }
+  text-align: center;
+  font-weight: 700;
+  text-transform: uppercase; }
   .footer_logo .logo_wrapper {
     max-width: 80px;
     margin: 0 auto 1em auto; }
@@ -1812,7 +1816,8 @@ h6 {
       font-size: 1.5em;
       float: left;
       margin-top: 0.2em;
-      cursor: pointer; }
+      cursor: pointer;
+      position: absolute; }
       .header_mobile .hamburger:hover {
         color: #f47e2a; }
     .header_mobile .logo_wrapper {
@@ -1858,7 +1863,8 @@ h6 {
     margin: 0 auto 0.5em auto; }
   .contact_box .contact_info {
     margin-bottom: 2em;
-    text-align: center; }
+    text-align: center;
+    padding-left: 10px; }
 
   .submit {
     width: 100%; }
@@ -1870,7 +1876,9 @@ h6 {
       width: auto;
       height: auto;
       line-height: auto;
-      margin-right: 0; } }
+      margin-right: 0; }
+    .footer_info > div {
+      padding-left: 10px; } }
 @media (max-width: 480px) {
   .grid-sizer,
   .grid-item {

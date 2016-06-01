@@ -311,7 +311,7 @@ function loadFeed () {
 function printFeed (postsData) {
     var i, message, comments, likes, createdTime, link, hideOnSmallScreen,
         feed = $('.feed'),
-        postsShowLimit = 20;
+        postsShowLimit = 15;
         mobileSizeShowLimit = 9;
 
     for (i=0; i < postsShowLimit; i++) {
@@ -435,10 +435,12 @@ function toggleMobileNav(slideFunction) {
 
 function mobileNavChanges() {
     if ($(window).width() <= 767) {
-        $('.header_logo h1').html('Home');
+        $('.header_logo h1').html('Connect With Us');
+        $('.header_logo a').attr('href', '#social_wrapper');
         $('.header').css('display','none');
     } else {
         $('.header_logo h1').html('Adelaide <br />Concept Tiling');
+        $('.header_logo a').attr('href', '#headliner_wrapper');
         $('.header').css('display','block');
     }
 }
