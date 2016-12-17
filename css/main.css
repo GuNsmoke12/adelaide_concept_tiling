@@ -1467,8 +1467,6 @@ h6 {
     top: -1.7em; }
   .header_fixed a {
     color: #393939; }
-  .header_fixed .header_logo h1 {
-    display: none; }
   .header_fixed .header_logo img {
     width: 60%; }
 
@@ -1548,7 +1546,7 @@ h6 {
   text-align: center; }
   .service_items .service {
     margin-bottom: 3em; }
-    .service_items .service:nth-child(4) {
+    .service_items .service:nth-child(5) {
       clear: left; }
   .service_items i {
     color: #f47e2a;

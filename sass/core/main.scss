@@ -183,9 +183,9 @@ h6 {
     }
 
     .header_logo {
-        h1 {
-            display: none;
-        }
+        // h1 {
+        //     display: none;
+        // }
 
         img {
             width: 60%;
@@ -313,7 +313,7 @@ h6 {
     .service {
         margin-bottom: 3em;
 
-        &:nth-child(4) {
+        &:nth-child(5) {
             clear: left;
         }
     }
