@@ -8,7 +8,7 @@
 
 $globalFontFamily: Raleway, sans-serif;
 
-$generalFontSize: 0.84em;
+$generalFontSize: 0.87em;
 $generalTextColor: #8d8d8d;
 $headerLinkColor: white;
 $h1Color: #393939;
@@ -482,10 +482,28 @@ h6 {
     width: 1%;
 }
 
+//Testimonials
+
+.testimonial_wrapper {
+    padding: $sectionPadding;
+    overflow: auto;
+}
+
+.testimonial {
+    margin: $sectionMargin;
+
+    .testimonial_item {
+      background-color: $sectionBgColor;
+      padding: 1em;
+    }
+}
+
+
 //Contact
 
 .contact_wrapper {
     padding: $sectionPadding;
+    background-color: $sectionBgColor;
 }
 
 .contact {
@@ -537,6 +555,7 @@ h6 {
             padding: 0.6em 1em;
             font-size: $generalFontSize;
             color: $h2Color;
+            background-color: white;
 
             &:focus {
                 outline: 0;
@@ -678,7 +697,7 @@ h6 {
             left: -2px;
         }
 
-        &.fa-envelope {
+        &.fa-briefcase {
             left: -3px;
         }
 
