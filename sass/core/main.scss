@@ -8,7 +8,7 @@
 
 $globalFontFamily: Raleway, sans-serif;
 
-$generalFontSize: 0.87em;
+$generalFontSize: 0.9em;
 $generalTextColor: #8d8d8d;
 $headerLinkColor: white;
 $h1Color: #393939;
@@ -87,6 +87,7 @@ h6 {
         letter-spacing: 5px;
         line-height: 1em;
         font-weight: 700;
+        word-wrap: break-word;
     }
 
     h3 {
@@ -228,15 +229,15 @@ h6 {
         opacity: 0.5;
 
         &-1 {
-            background-image: url(../../images/carousel_images/bathroom.png)
-        }
-
-        &-2 {
             background-image: url(../../images/carousel_images/home_exterior_full.png)
         }
 
+        &-2 {
+            background-image: url(../../images/carousel_images/heritage_tiles.jpg)
+        }
+
         &-3 {
-            background-image: url(../../images/carousel_images/water_feature_wall.png)
+            background-image: url(../../images/carousel_images/bathroom.png)
         }
     }
 }
@@ -246,6 +247,7 @@ h6 {
     top: 49%;
     width: 100%;
     text-align: center;
+    padding: 0 1em;
 }
 
 .overlay {
@@ -353,7 +355,7 @@ h6 {
     }
 
     &-item-2 {
-        background-image: url(../../images/showcase/exterior_feature_wall.png);
+        background-image: url(../../images/showcase/outdoor_setting.png);
     }
 
     &-item-3 {
@@ -391,6 +393,7 @@ h6 {
     &-popup {
         background-color: $logoOrange;
         background-color: rgb(244,126,42);
+        background-color: rgba(244,126,42,0.81);
         color: white;
         position: absolute;
         top: 0;
@@ -474,7 +477,7 @@ h6 {
 
 .grid-sizer,
 .grid-item {
-    width: 24%;
+    width: 32%;
     margin-bottom: 1%;
 }
 

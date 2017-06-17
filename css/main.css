@@ -1365,7 +1365,7 @@ body {
   color: #8d8d8d; }
 
 p {
-  font-size: 0.87em;
+  font-size: 0.9em;
   margin-bottom: 1em; }
 
 h2 {
@@ -1407,7 +1407,8 @@ h6 {
   font-size: 3.75em;
   letter-spacing: 5px;
   line-height: 1em;
-  font-weight: 700; }
+  font-weight: 700;
+  word-wrap: break-word; }
 .slide_overlays h3 {
   color: white; }
 
@@ -1443,7 +1444,7 @@ h6 {
       top: -3.5em; }
   .header a {
     font-weight: 700;
-    font-size: 0.87em;
+    font-size: 0.9em;
     letter-spacing: 2px;
     text-transform: uppercase;
     padding: 0 1.5em;
@@ -1489,17 +1490,18 @@ h6 {
     background-position: center center;
     opacity: 0.5; }
     .headliner .carousel_image-1 {
-      background-image: url(../../images/carousel_images/bathroom.png); }
-    .headliner .carousel_image-2 {
       background-image: url(../../images/carousel_images/home_exterior_full.png); }
+    .headliner .carousel_image-2 {
+      background-image: url(../../images/carousel_images/heritage_tiles.jpg); }
     .headliner .carousel_image-3 {
-      background-image: url(../../images/carousel_images/water_feature_wall.png); }
+      background-image: url(../../images/carousel_images/bathroom.png); }
 
 .slide_overlays {
   position: absolute;
   top: 49%;
   width: 100%;
-  text-align: center; }
+  text-align: center;
+  padding: 0 1em; }
 
 .overlay {
   max-width: 1100px;
@@ -1521,7 +1523,7 @@ h6 {
   overflow: auto;
   margin-top: 2em; }
   .blerb_logos span {
-    font-size: 0.87em;
+    font-size: 0.9em;
     font-weight: 600; }
   .blerb_logos img {
     max-width: 120px;
@@ -1569,7 +1571,7 @@ h6 {
 .showcase-item-1 {
   background-image: url(../../images/showcase/bathroom.png); }
 .showcase-item-2 {
-  background-image: url(../../images/showcase/exterior_feature_wall.png); }
+  background-image: url(../../images/showcase/outdoor_setting.png); }
 .showcase-item-3 {
   background-image: url(../../images/showcase/front_entrance.png); }
 .showcase-item-4 {
@@ -1591,6 +1593,7 @@ h6 {
 .showcase-popup {
   background-color: #f47e2a;
   background-color: #f47e2a;
+  background-color: rgba(244, 126, 42, 0.81);
   color: white;
   position: absolute;
   top: 0;
@@ -1622,7 +1625,7 @@ h6 {
     .social .post_message .post_date {
       display: block;
       margin: 1em 0;
-      font-size: 0.87em; }
+      font-size: 0.9em; }
   .social .post_image img {
     width: 100%; }
   .social .post_footer {
@@ -1632,7 +1635,7 @@ h6 {
     .social .post_count i {
       margin-right: 0.3em; }
   .social .post_link {
-    font-size: 0.87em;
+    font-size: 0.9em;
     float: right;
     line-height: 2em;
     color: #8d8d8d; }
@@ -1642,7 +1645,7 @@ h6 {
 
 .grid-sizer,
 .grid-item {
-  width: 24%;
+  width: 32%;
   margin-bottom: 1%; }
 
 .gutter-sizer {
@@ -1694,7 +1697,7 @@ h6 {
       border: 1px solid #a7a6a6;
       width: 100%;
       padding: 0.6em 1em;
-      font-size: 0.87em;
+      font-size: 0.9em;
       color: #393939;
       background-color: white; }
       .form_wrapper .input_wrapper input:not(.submit):focus, .form_wrapper .input_wrapper textarea:focus {
@@ -1705,7 +1708,7 @@ h6 {
     .form_wrapper .input_wrapper textarea {
       min-height: 12em; }
     .form_wrapper .input_wrapper label {
-      font-size: 0.87em; }
+      font-size: 0.9em; }
       .form_wrapper .input_wrapper label.error {
         color: red; }
   .form_wrapper .contact_success, .form_wrapper .contact_failed {
@@ -1725,7 +1728,7 @@ h6 {
   .form_wrapper .submit {
     padding: 1em 1.5em;
     border: 2px solid #f47e2a;
-    font-size: 0.87em;
+    font-size: 0.9em;
     font-weight: 800;
     color: white;
     background-color: #f47e2a;
@@ -1746,7 +1749,7 @@ h6 {
   overflow: auto;
   background-color: #393939;
   padding: 5em 0;
-  font-size: 0.87em; }
+  font-size: 0.9em; }
   .footer_info h4 {
     color: white;
     font-size: 1em;
