@@ -588,11 +588,27 @@ h6 {
     }
 
     .contact_success {
-      color:#9bd32d;
+      background-color: #9bd32d;
+      color: white;
+      padding: 1em;
+      text-align: center;
+      margin: 0 10px;
+
+      p {
+        margin-bottom: 0;
+      }
     }
 
     .contact_failed {
-      color:#c0392b;
+      background-color: #c0392b;
+      color: white;
+      padding: 1em;
+      text-align: center;
+      margin: 0 10px;
+
+      p {
+        margin-bottom: 0;
+      }
     }
 
     .captcha_code {

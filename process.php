@@ -1,14 +1,18 @@
 <?php
-    $to = "mail@yourdomain.com";
-    $from = $_REQUEST['email'];
-    $name = $_REQUEST['name'];
+    $to = "lolcano12@live.co.uk";
+    // $from = $_REQUEST['email'];
+    $from = "donotreply@adelaideconcepttiling.com.au";
+    $firstname = $_REQUEST['firstName'];
+    $lastname = $_REQUEST['lastName'];
+    $fullName = "".$firstname." ".$lastname;
     $headers = "From: $from";
-    $subject = "You have a message sent from your site";
+    $subject = "Message from Adelaide Concept Tiling Website: ".$fullName;
     $fields = array();
-    $fields{"name"} = "name";
-    $fields{"email"} = "email";
-    $fields{"phone"} = "phone";
-    $fields{"message"} = "message";
-    $body = "Here is what was sent:\n\n"; foreach($fields as $a => $b){   $body .= sprintf("%20s: %s\n",$b,$_REQUEST[$a]); }
+    $fields{"firstName"} = "First Name";
+    $fields{"lastName"} = "Surname";
+    $fields{"email"} = "Email";
+    $fields{"phone"} = "Phone";
+    $fields{"message"} = "Message";
+    $body = "Here is what was sent:\n\n"; foreach($fields as $a => $b){   $body .= sprintf("%s: %s\n",$b,$_REQUEST[$a]); }
     $send = mail($to, $subject, $body, $headers);
 ?>

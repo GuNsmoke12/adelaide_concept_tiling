@@ -1714,9 +1714,21 @@ h6 {
   .form_wrapper .contact_success, .form_wrapper .contact_failed {
     display: none; }
   .form_wrapper .contact_success {
-    color: #9bd32d; }
+    background-color: #9bd32d;
+    color: white;
+    padding: 1em;
+    text-align: center;
+    margin: 0 10px; }
+    .form_wrapper .contact_success p {
+      margin-bottom: 0; }
   .form_wrapper .contact_failed {
-    color: #c0392b; }
+    background-color: #c0392b;
+    color: white;
+    padding: 1em;
+    text-align: center;
+    margin: 0 10px; }
+    .form_wrapper .contact_failed p {
+      margin-bottom: 0; }
   .form_wrapper .captcha_code {
     font-weight: 800;
     color: #f47e2a;

@@ -44,6 +44,13 @@ function initValidator() {
     // validate contact form
     $(function() {
         $('#contact_form').validate({
+            invalidHandler: function(event, validator) {
+                // 'this' refers to the form
+                var errors = validator.numberOfInvalids();
+                if (errors) {
+                  $('.contact_success').hide();
+                }
+            },
             rules: {
                 firstName: {
                     required: true
@@ -83,7 +90,7 @@ function initValidator() {
                     required: "Please include a message to send"
                 },
                 captcha: {
-                    required: "Please complete the verification"
+                    required: "Please complete the verification (It is case sensitive)"
                 }
             },
             submitHandler: function(form) {
@@ -94,6 +101,7 @@ function initValidator() {
                     success: function() {
                         $('input, textarea').not('.submit').val('');
                         $('.contact_success').fadeIn();
+                        generateCaptchaCode();
                     },
                     error: function() {
                         $('.contact_failed').fadeIn();
@@ -473,7 +481,6 @@ $(document).ready(function() {
 
     $(document).scroll(function() {
         if ($('.header_mobile').css('display') == "none") {
-            console.log(headerFixedPos);
             if ($(document).scrollTop() > $('.headliner_wrapper').height() - 10 && headerFixedPos == false) {
                 $('.header_wrapper').hide().addClass('header_fixed').fadeIn();
                 headerFixedPos = true;
