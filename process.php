@@ -1,5 +1,5 @@
 <?php
-    $to = "lolcano12@live.co.uk";
+    $to = "Adelaideconcepttiling@gmail.com";
     // $from = $_REQUEST['email'];
     $from = "donotreply@adelaideconcepttiling.com.au";
     $firstname = $_REQUEST['firstName'];
